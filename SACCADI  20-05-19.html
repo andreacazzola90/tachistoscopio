@@ -1,0 +1,630 @@
+<script>
+	var K_SET_01_NAME = "LETTERE MAIUSCOLE";
+	var K_SET_01 = "A-B-C-D-E-F-G-H-I-L-M-N-O-P-Q-R-S-T-U-V-Z";
+
+	var K_SET_02_NAME = "LETTERE MAIUSCOLE INGLESI";
+	var K_SET_02 = "A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z"
+
+	var K_SET_03_NAME = "Lettere minuscole";
+	var K_SET_03 = "a-b-c-d-e-f-g-h-i-l-m-n-o-p-q-r-s-t-u-v-z"; 
+
+	var K_SET_04_NAME = "Lettere minuscole inglesi";
+	var K_SET_04 = "a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z";
+
+	var K_SET_05_NAME = "Numeri";
+	var K_SET_05 = "0-1-2-3-4-5-6-7-8-9"; 
+
+	var K_SET_06_NAME = "2 Lettere";
+	var K_SET_06 = "al-ai-ba-be-bi-bo-bu-ca-ce-ci-co-cu-da-de-di-do-du-fa-fe-fi-fo-fu-ga-ge-gi-go-gu-in-il-la-le-li-lo-lu-ma-me-mi-mo-mu-na-ne-ni-no-nu-pa-pe-pi-po-pu-ra-re-ri-ro-ru-sa-se-si-so-su-ta-te-ti-to-tu-un-va-ve-vi-vo-vu-za-ze-zi-zo-zu";
+
+	var K_SET_07_NAME = "3 Lettere";
+	var K_SET_07 = "abc-ace-ade-afa-ago-ala-ali-alt-amo-ape-api-avi-avo-bau-beh-bei-bel-ben-bio-blu-boa-bob-bue-can-che-chi-cin-cor-dal-dea-dee-dei-del-dio-dna-don-due-duo-dvd-eco-ego-ehi-ehm-era-ere-est-fax-fez-gin-gli-gps-gru-hai-han-ira-jet-mai-mal-mia-mie-mio-mix-nei-nel-neo-noi-oca-ops-ora-ore-oro-osa-ove-per-pia-pio-più-poi-pro-pub-qua-que-qui-rei-reo-rio-rum-sai-san-sax-sci-sei-sos-sta-sto-sua-sub-sud-sue-sui-sul-suo-tac-tal-the-tic-tir-toc-tra-tre-tuo-una-uno-usa-usi-uso-uva-uve-vai-val-via-vie-vip-voi-zar-zen-zia-zie-zii-zio-zip-zoo";
+
+	var K_SET_08_NAME = "4 Lettere";
+	var K_SET_08 = "ente-enti-equa-equo-erba-egli-elfo-falò-fame-fave-faro-fasi-fase-erto-esca-esco-esci-esce-essa-esse-etto-etti-euro-esso-essi-deve-devo-dici-dice-dica-dita-dito-dire-diga-dado-dadi-dame-dama-cute-dato-dati-date-data-divo-duna-dune-dure-dura-duca-ecco-dove-dolo-doge-doni-dono-dosi-dose-dote-gufi-gite-gita-giro-golf-goal-inno-irta-irte-irto-irti-iris-idem-idra-iene-iena-idee-idea-fine-foce-foca-film-fili-gare-gara-geni-geco-gela-gelo-fuga-foro-fusa-fuso-fusi-fumi-fumo-fune-aste-asta-area-asce-arto-arti-arte-base-beve-bevo-biga-bici-bene-baci-agro-aghi-alba-albo-acne-alea-ansa-anno-anzi-anca-ampi-arca-arco-apro-apri-alpe-alpi-alzi-alza-alte-alta-alti-alto-cibo-cima-cime-cena-cene-ceni-cera-cupa-cupo-cupi-cupe-cubo-cubi-covo-covi-comi-come-coma-como-coni-buca-brio-bora-cani-cane-cavo-cavi-ceci-cece-cave-cava-case-casa-caro-casi-caso-buon-buio-cade";
+
+	var K_SET_09_NAME ="Decine";
+	var K_SET_09 = "10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27-28-29-30-31-32-33-34-35-36-35-38-39-40-41-42-43-44-45-46-47-48-49-50-51-52-53-54-55-56-56-57-58-59-60-61-62-63-64-65-66-67-68-69-70-71-72-73-74-75-76-77-78-79-80";
+
+	var K_SET_10_NAME = "set vuoto 2";
+	var K_SET_10 = "";
+
+	var K_SET_11_NAME = "set vuoto 3";
+	var K_SET_11 = "";
+
+        var K_SET_12_NAME = "set vuoto 4";
+	var K_SET_12 = "";
+
+</script>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>VisTrainingIT_mod_jak</title>
+
+<style>
+    .clsSymb
+    {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-size: 100;
+        font-family: 'Verdana, sans-serif';
+        z-index: 0;
+        text-align: center;
+        background-color: White;
+    }
+    .clsParametri
+    {
+        position: absolute;
+        z-index: 1;
+        
+    }
+    .clsCampo 
+    {
+    	text-align:center;
+    	background-color: White;
+    }
+	
+	.clsScorrimento
+	{
+		position: absolute;
+        top: -10px;
+        left: 0px;
+		z-index: -1;
+		font-size: 60;
+		font-family: 'Verdana';
+	}
+	.yesBkg
+	{
+		background-color: White;
+	}
+</style>
+
+<script>
+var debugOn = 0;
+var SymbLst;
+var SymbIdx = 0;
+var SymbSet;
+var SymbArr;
+var FontLst;
+var FontIdx = 0;
+var FontSet;
+var SizeSet = 60;
+var MoveSet = 'O';
+var DistSet = 400;
+var FreqSet = 1000;
+var QnttSet = 50;
+var VideoMaxWidth;
+var VideoMaxHeight;
+var DistMaxWidth;
+var DistMaxHeight;
+var MaxDemoTop;
+var Point1Oriz = 0;
+var Point1Vert = 0;
+var Point2Oriz = 0;
+var Point2Vert = 0;
+var IsStart = 0;
+var Counter = 0;
+var OverCrowdToggle = 0;
+var Video75Width;
+var Video50Width;
+var affPosTop = 0;
+
+//Esegue le operazioni iniziali
+function funInit()
+{
+	// Acquisisce i dati relativi alla maschera
+    VideoMaxWidth = document.body.clientWidth;
+    VideoMaxHeight = document.body.clientHeight;
+    Video75Width = Math.round(VideoMaxWidth/1.33);
+	Video50Width = Math.round(VideoMaxWidth/2);
+
+	//imposta il nome del set
+	document.getElementsByName('sceltaset')[0].options[0].innerHTML = K_SET_01_NAME;
+	document.getElementsByName('sceltaset')[0].options[1].innerHTML = K_SET_02_NAME;
+	document.getElementsByName('sceltaset')[0].options[2].innerHTML = K_SET_03_NAME;
+	document.getElementsByName('sceltaset')[0].options[3].innerHTML = K_SET_04_NAME;
+	document.getElementsByName('sceltaset')[0].options[4].innerHTML = K_SET_05_NAME;
+	document.getElementsByName('sceltaset')[0].options[5].innerHTML = K_SET_06_NAME;
+	document.getElementsByName('sceltaset')[0].options[6].innerHTML = K_SET_07_NAME;
+	document.getElementsByName('sceltaset')[0].options[7].innerHTML = K_SET_08_NAME;
+	document.getElementsByName('sceltaset')[0].options[8].innerHTML = K_SET_09_NAME;
+	document.getElementsByName('sceltaset')[0].options[9].innerHTML = K_SET_10_NAME;
+	document.getElementsByName('sceltaset')[0].options[10].innerHTML = K_SET_11_NAME;
+
+	// Nasconde l'affollamento all'avvio
+	document.getElementById("scorrimento").style.display = 'none';
+
+    SymbLst = document.getElementById("selSymb").options;
+    document.getElementById("selSymb").selectedIndex = SymbIdx;
+
+    FontLst = document.getElementById("selFont").options;
+    document.getElementById("selFont").selectedIndex = FontIdx;
+
+    fldSizeCurr.value = SizeSet;
+    setRadioSelect(radMove, MoveSet);
+
+    fldDistCurr.value = DistSet;
+    fldFreqCurr.value = FreqSet;
+    fldQnttCurr.value = QnttSet;
+
+    if (debugOn)
+    {
+        fldScreenDim.innerHTML = "Schermo: " + VideoMaxWidth + "x" + VideoMaxHeight;
+        fldParam.innerHTML = "SYMB=" + SymbIdx + "; Font=" + FontIdx + "; SIZE=" + SizeSet + "; MOVE=" + MoveSet + "; DIST=" + DistSet + "; FREQ=" + FreqSet + "; QNTT=" + QnttSet;
+        fldQtnLoop.innerHTML = 'Loop=' + Counter;
+    }
+
+    // Legge i valori e visualizza i simboli
+    symChange();
+}
+
+//cambia il font dell'affollamento
+function overcrowdFontChange(){
+	document.getElementById("scorrimento").style.fontFamily = FontSet;
+}
+
+//Visualizza il simbolo sullo schermo
+function symbLocate(pSym, pIdx, pDim, pFont, pLeft, pTop)
+{
+    if (pSym == 1)
+    {
+        fldSymb.innerHTML = SymbArr[pIdx];
+        fldSymb.style.fontSize = pDim;
+        fldSymb.style.fontFamily = pFont;
+        fldSymb.style.left = pLeft;
+        fldSymb.style.top = pTop;
+    }
+    else
+    {
+        fldDemo.innerHTML = SymbArr[pIdx];
+        fldDemo.style.fontSize = pDim;
+        fldDemo.style.fontFamily = pFont;
+        fldDemo.style.left = pLeft;
+        fldDemo.style.top = pTop;
+    }
+}
+
+//Legge i valori e visualizza i simboli
+function symChange()
+{
+    // Se e' attivo il timer lo ferma
+    if (IsStart == 1)
+        funStartStop();
+    
+    // Acquisisce il set di caratteri selezionato
+    SymbIdx = document.getElementById("selSymb").selectedIndex;
+    SymbSet = SymbLst[SymbIdx].value;
+    switch(SymbSet)
+    {
+        case 'VT01': SymbArr = K_SET_01.split('-'); break;
+        case 'VT02': SymbArr = K_SET_02.split('-'); break;
+        case 'VT03': SymbArr = K_SET_03.split('-'); break;
+		case 'VT04': SymbArr = K_SET_04.split('-'); break;
+		case 'VT05': SymbArr = K_SET_05.split('-'); break;
+		case 'VT06': SymbArr = K_SET_06.split('-'); break;
+		case 'VT07': SymbArr = K_SET_07.split('-'); break;
+		case 'VT08': SymbArr = K_SET_08.split('-'); break;
+		case 'VT09': SymbArr = K_SET_09.split('-'); break;
+		case 'VT10': SymbArr = K_SET_10.split('-'); break;
+		case 'VT11': SymbArr = K_SET_11.split('-'); break;
+        default: alert("Errore: Set non configurato"); break;
+    }
+
+    // Acquisisce il font d selezionato
+    FontIdx = document.getElementById("selFont").selectedIndex;
+    FontSet = FontLst[FontIdx].value;
+
+    // Acquisisce la dimensione selezionata
+    SizeSet = fldSizeCurr.value / 1;
+
+    // Acquisisce il tipo di movimento selezionato
+    MoveSet = whatRadioSelect(radMove);
+
+    // Acquisisce la distanza selezionata
+    DistSet = fldDistCurr.value / 1;
+
+    // Acquisisce la frequenza selezionata
+    FreqSet = fldFreqCurr.value / 1;
+
+    // Acquisisce la quantita' selezionata
+    QnttSet = fldQnttCurr.value / 1;
+
+    // Calcola il centro dello schermo
+    Point1Oriz = (VideoMaxWidth / 2) - (SizeSet / 2);
+    Point1Vert = (VideoMaxHeight / 2) - (SizeSet / 2);
+    Point2Oriz = (VideoMaxWidth / 2) - (SizeSet / 2);
+    Point2Vert = (VideoMaxHeight / 2) - (SizeSet / 2);
+
+    DistMaxWidth = (VideoMaxWidth) - (SizeSet);
+    DistMaxHeight = (VideoMaxHeight) - (SizeSet);
+
+    // Se il movimento e' Random disabilita la selezione della distanza
+    if (MoveSet == 'R')
+    {
+        document.getElementById("fldDistDec").disabled = true;
+        document.getElementById("fldDistCurr").disabled = true;
+        document.getElementById("fldDistInc").disabled = true;
+    }
+    else
+    {
+        document.getElementById("fldDistDec").disabled = false;
+        document.getElementById("fldDistCurr").disabled = false;
+        document.getElementById("fldDistInc").disabled = false;
+    }
+
+    // Se il movimento e' Orizzontale verifica che la distanza non superi la larghezza dello schermo
+    if (MoveSet == 'O')
+    {
+        if (DistSet > DistMaxWidth) 
+        {
+            DistSet = DistMaxWidth;
+            fldDistCurr.value = DistSet;
+        }
+        Point1Oriz -= DistSet / 2;
+        Point2Oriz = Point2Oriz + (DistSet / 2);
+    }
+
+    // Se il movimento e' Verticale verifica che la distanza non superi l'altezza dello schermo
+    if (MoveSet == 'V')
+    {
+        if (DistSet > DistMaxHeight) 
+        {
+            DistSet = DistMaxHeight;
+            fldDistCurr.value = DistSet;
+        }
+        Point1Vert -= DistSet / 2;
+        Point2Vert = Point2Vert + (DistSet / 2);
+    }
+
+    if (debugOn)
+    {
+        fldScreenDim.innerHTML = "Schermo: " + VideoMaxWidth + "x" + VideoMaxHeight;
+        fldParam.innerHTML = "SYMB=" + SymbIdx + "; Font=" + FontIdx + "; SIZE=" + SizeSet + "; MOVE=" + MoveSet + "; DIST=" + DistSet + "; FREQ=" + FreqSet + "; QNTT=" + QnttSet;
+        fldQtnLoop.innerHTML = 'Loop=' + Counter;
+        fldCoord.innerHTML = 'Coord: o1=' + Point1Oriz + ' v1=' + Point1Vert + ' o2=' + Point2Oriz + ' v2=' + Point2Vert;
+    }
+
+    // Visualizza i simboli di esempio sullo schermo
+    symbLocate(1, 0, SizeSet, FontSet, Point1Oriz, Point1Vert);
+    symbLocate(2, 0, SizeSet, FontSet, Point2Oriz, Point2Vert);
+}
+
+//Cambia la grandezza dei simboli
+function funSizeChange(pDelta)
+{
+    if (pDelta == 1)
+    {
+        SizeSet += 10;
+        if (SizeSet >= VideoMaxWidth)
+            SizeSet = VideoMaxWidth;
+        if (SizeSet >= VideoMaxHeight)
+            SizeSet = VideoMaxHeight;
+    }
+    else
+    {
+        SizeSet -= 10;
+        if (SizeSet <= 0)
+            SizeSet = 10;
+    }
+
+    fldSizeCurr.value = SizeSet;
+    document.getElementById("scorrimento").style.fontSize =SizeSet;
+    symChange();
+}
+
+//Cambia la distanza tra i simboli
+function funDistChange(pDelta)
+{
+    if (pDelta == 1)
+    {
+        DistSet += 10;
+    }
+    else
+    {
+        DistSet -= 10;
+        if (DistSet <= 0)
+            DistSet = 0;
+    }
+
+    fldDistCurr.value = DistSet;
+    symChange();
+}
+
+//Cambia la frequenza della variazione dei simboli
+function funFreqChange(pDelta)
+{
+    if (pDelta == 1)
+    {
+        FreqSet += 100;
+    }
+    else
+    {
+        FreqSet -= 100;
+        if (FreqSet <= 0)
+            FreqSet = 0;
+    }
+
+    fldFreqCurr.value = FreqSet;
+    symChange();
+}
+
+//Cambia il numero di variazioni
+function funQnttChange(pDelta)
+{
+    if (pDelta == 1)
+    {
+        QnttSet += 1;
+    }
+    else
+    {
+        QnttSet -= 1;
+        if (QnttSet <= 0)
+            QnttSet = 0;
+    }
+
+    fldQnttCurr.value = QnttSet;
+    symChange();
+}
+
+//Muove il simbolo nel modo selezionato
+function funMove()
+{
+    var rndIdx = Math.floor(Math.random() * SymbArr.length);
+    var rndLeft = 1;
+    var rndTop = 1;
+
+    switch(MoveSet) 
+    {
+        case 'O': 
+            if ((Counter % 2) == 0) 
+                rndLeft = Point1Oriz;
+            else 
+                rndLeft = Point2Oriz;
+            rndTop = Point1Vert;
+            break;
+        case 'V': 
+            if ((Counter % 2) == 0)
+                rndTop = Point1Vert;
+            else
+                rndTop = Point2Vert;
+            rndLeft = Point1Oriz;
+            break;
+        case 'R': 
+        default:
+            rndLeft = Math.floor(Math.random() * DistMaxWidth);
+            rndTop = Math.floor(Math.random() * DistMaxHeight);
+            break;
+    }
+    symbLocate(1, rndIdx, SizeSet, FontSet, rndLeft, rndTop);
+    Counter++;
+    if (debugOn)
+    {
+        fldCoord.innerHTML = 'Coord: o1=' + rndLeft + ' v1=' + rndTop ;
+        fldQtnLoop.innerHTML = 'Loop=' + Counter;
+    }
+    if (Counter >= QnttSet)
+        funStartStop();
+}
+
+//Ritorna il valore selezionato
+function whatRadioSelect(radioList)
+{
+    var ii = 0;
+
+    for (ii = 0; ii < radioList.length; ii++) 
+    {
+       if (radioList[ii].checked)
+           return (radioList[ii].value);
+    }
+    return "";
+}
+
+//Seleziona il bottone col valore selezionato
+function setRadioSelect(radioList, pValue)
+{
+    var ii = 0;
+
+    for (ii = 0; ii < radioList.length; ii++) 
+    {
+        if (radioList[ii].value == pValue)
+        {
+           radioList[ii].checked = true;
+           return;
+        }
+    }
+}
+
+//Attiva/Disattiva il movimento
+function funStartStop()
+{
+    if (IsStart == 0)
+    {
+        Counter = 0;
+        symbLocate(1, 0, 0, "Arial Black", 0, 0);
+        symbLocate(2, 0, 0, "Arial Black", 0, 0);
+        IsStart = 1;
+        document.getElementById("butStartStop").innerHTML = 'STOP';
+        document.getElementById("sezParametri").style.visibility = 'hidden';
+        document.getElementById("butHelp").style.visibility = 'hidden';
+        window.tm = setInterval('funMove();', FreqSet);
+    }
+    else
+    {
+        IsStart = 0;
+        document.getElementById("butStartStop").innerHTML = 'START';
+        document.getElementById("sezParametri").style.visibility = 'visible';
+        document.getElementById("butHelp").style.visibility = 'visible';
+        clearInterval(window.tm);
+        symChange();
+    }
+}
+
+// mostra un alert che spiega come personalizzare i set
+function help()
+{
+	alert("SET PERSONALIZZATI: come fare\n\n1) Tasto destro su questo file, apri con blocco note\n(N.B. se non hai tra le opzioni \"apri con > blocco note\" clicca su \"apri con > Scegli un'altra app\", poi seleziona \"Blocco Note\")\n\n2) Vedrai in ordine gli undici set. Modifica il nome di quello che ti interessa\n(ad esempio sostituendo \"var K_SET_01_NAME = \"LETTERE MAIUSCOLE\"; con \"var K_SET_01_NAME = \"mio set\").\n\n3) Modifica il contenuto del set separando ogni parola (o lettera) con un trattino\n(ad esempio sostituendo var K_SET_01 = \"A-B-C-D-E-F-G-H-I-L-M-N-O-P-Q-R-S-T-U-V-Z\"; con var K_SET_01 = \"questa-è-una-prova\";)\n\nATTENZIONE: non andare mai a capo!\n\n Chiudi il file salvando le modifiche e riaprilo normalmente");	
+}
+
+// affollamento giù di 10px
+function ovCrDown()
+{
+	affPosTop+=10;
+	document.getElementById("scorrimento").style.top=affPosTop;
+}
+
+// affollamento su di 10px
+function ovCrUp()
+{
+	affPosTop-=10;
+	document.getElementById("scorrimento").style.top=affPosTop;
+}
+
+// Attiva/Disattiva l'affollamento
+function overcrowd()
+{
+	// Acquisisce se l'affollamento è attivo o no
+    OverCrowdToggle = whatRadioSelect(radOvCr);
+	if (OverCrowdToggle == 1)
+	{
+		document.getElementById("butOvCrUp").disabled = false;
+		document.getElementById("butOvCrDown").disabled = false;
+		document.getElementById("scorrimento").style.display = '';
+	}
+	else
+	{ 
+		document.getElementById("butOvCrUp").disabled = true;
+		document.getElementById("butOvCrDown").disabled = true;
+		document.getElementById("scorrimento").style.display = 'none';
+	}
+}
+</script>
+
+</head>
+<body onLoad='funInit();'>
+
+<button id='butStartStop' onClick='funStartStop();'>START</button>
+<button id='butHelp' onClick='help();'>?</button>
+
+
+<div id='sezParametri' class='clsParametri'>
+
+<table>
+	<tr>
+		<td width="20%" class='yesBkg'>
+            <fieldset>
+                <legend>Simboli</legend> 
+                <select id="selSymb" name="sceltaset" onChange='symChange();'>
+                    <option value='VT01'></option>
+					<option value='VT02'></option>
+                    <option value='VT03'></option>
+					<option value='VT04'></option>
+                    <option value='VT05'></option>
+                    <option value='VT06'></option>
+                    <option value='VT07'></option>
+                    <option value='VT08'></option>
+                    <option value='VT09'></option>
+                    <option value='VT10'></option>
+                    <option value='VT11'></option>
+                </select>
+            </fieldset>
+		</td>
+		<td width="12%" class='yesBkg'>
+            <fieldset>
+                <legend>Movimento</legend>
+                <input type="radio" id="radMove" name="fldMove" value="O" onClick='symChange();' checked> Orizzontale 
+                <br>
+                <input type="radio" id="radMove" name="fldMove" value="V" onClick='symChange();'> Verticale
+                <br> 
+                <input type="radio" id="radMove" name="fldMove" value="R" onClick='symChange();'> Random
+            </fieldset>
+        </td>
+        <td width="44%"></td>
+        <td width="12%" class='yesBkg'>
+            <fieldset class='cls'>
+                <legend>Dimensioni</legend> 
+                <button onClick="funSizeChange(0)";>-</button>
+                <input class='clsCampo' type='text' maxLength=4 size=3 id='fldSizeCurr' value=50 readonly>
+                <button onClick="funSizeChange(1)">+</button>
+            </fieldset>
+        </td>
+        <td width="12%" class='yesBkg'>
+            <fieldset>
+                <legend>Distanza</legend>
+                <button id='fldDistDec' onClick="funDistChange(0)";>-</button>
+                <input class='clsCampo' type='text' maxLength=4 size=3 id='fldDistCurr' value=100 readonly>
+                <button id='fldDistInc' onClick="funDistChange(1)">+</button>
+            </fieldset>
+        </td>
+	</tr>
+	<tr>
+		<td class='yesBkg'>
+            <fieldset>
+                <legend>Font</legend> 
+                <select id="selFont" onChange='symChange();overcrowdFontChange()'>
+                    <option value='Verdana, sans-serif'>Verdana</option>
+                    <option value='Arial, sans-serif'>Arial</option>
+                    <option value='"Times New Roman, serif"'>Times New Roman</option>
+                    <option value='"Courier New", mono'>Courier New</option>
+                    <option value='Georgia, serif'>Georgia</option>
+                    <option value='Geneva, sans-serif'>Geneva</option>
+                </select>
+            </fieldset>
+        </td>
+        <td class='yesBkg'> 
+		 <fieldset>
+                <legend>Affollamento</legend>
+				<button id="butOvCrUp" onClick='ovCrUp();' disabled="true">&#8593</button>
+                <input type="radio" id="radOvCr" name="fldOvCr" value="0" onClick='overcrowd();' checked> Off
+                <br> 
+                <button id="butOvCrDown"onClick='ovCrDown();' disabled="true">&#8595</button>
+                <input type="radio" id="radOvCr" name="fldOvCr" value="1" onClick='overcrowd();'> On 
+            </fieldset>
+		</td>
+		<td></td>
+		<td class='yesBkg'>
+            <fieldset>
+                <legend>Frequenza</legend>
+                <button onClick="funFreqChange(0)";>-</button>
+                <input class='clsCampo' type='text' maxLength=4 size=3 id='fldFreqCurr' value=500 readonly>
+                <button onClick="funFreqChange(1)">+</button>
+            </fieldset>
+        </td>
+       <td class='yesBkg'>
+            <fieldset>
+                <legend>Quantità</legend>
+                <button onClick="funQnttChange(0)";>-</button>
+                <input class='clsCampo' type='text' maxLength=4 size=3 id='fldQnttCurr' value=10 readonly>
+                <button onClick="funQnttChange(1)">+</button>
+            </fieldset>
+        </td>
+	</tr>
+</table>
+</div>
+
+<div class='clsSymb' id=fldSymb></div>
+<div class='clsSymb' id=fldDemo></div>
+
+<!-- info mostrate se la var debug è impostata ad 1 -->
+<span id=fldScreenDim></span>
+<span id=fldParam></span>
+<span id=fldQtnLoop></span>
+<span id=fldCoord></span>
+
+<div id='scorrimento' class='clsScorrimento'>
+  <marquee behavior="scroll" direction="left" scrollamount="5" width="100%">Nel mezzo del cammin di nostra vita &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ché la diritta via</marquee>
+   <marquee behavior="scroll" direction="right" scrollamount="8" width="100%">mi ritrovai per una selva oscura</marquee>
+   <marquee behavior="scroll" direction="left" scrollamount="10" width="75%">che nel pensier rinova la paura!</marquee>
+ 	<marquee behavior="scroll" direction="right" scrollamount="20" width="50%">parea che l'aere ne tremesse &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp con tanta pietà</marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="10" width="100%">Tu se' lo mio maestro e 'l mio autore</marquee>
+    <marquee behavior="scroll" direction="right" scrollamount="5" width="100%">raggi del pianeta</marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="13" width="75%">Io non so &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp si volse a retro &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp l'ora del tempo e la dolce stagione</marquee>
+    <marquee behavior="scroll" direction="right" scrollamount="8" width="100%">guardai in alto, e vidi le sue spalle</marquee>
+  	<marquee behavior="scroll" direction="left" scrollamount="6" width="100%">l'animo mio</marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="9" width="100%">ritornar più volte vòlto</marquee>
+    <marquee behavior="scroll" direction="right" scrollamount="12" width="100%">di tutte brame &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp parea che l'aere ne tremesse</marquee>
+</div>
+
+</body>
+</html>
