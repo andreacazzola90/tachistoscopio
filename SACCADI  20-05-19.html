@@ -179,18 +179,33 @@
                 fldSymb.innerHTML = SymbArr[pIdx];
                 fldSymb.style.fontSize = pDim;
                 fldSymb.style.fontFamily = pFont;
-                fldSymb.style.left = pLeft;
                 fldSymb.style.top = pTop;
                 fldSymb.style.display = pLeft == 0 ? "none" : 'block';
+                //if is an image
+                if (fldSymb.querySelector('img') !== null) {
+                    fldSymb.children[0].style.width = pDim * 3;
+                    fldSymb.style.left = pLeft;
+                } else {
+                    fldSymb.style.left = pLeft;
+                }
+
             }
             else {
                 fldDemo.innerHTML = SymbArr[pIdx];
                 fldDemo.style.fontSize = pDim;
                 fldDemo.style.fontFamily = pFont;
-                fldDemo.style.left = pLeft;
                 fldDemo.style.top = pTop;
                 fldDemo.style.display = "block";
+                //if is an image
+                if (fldDemo.querySelector('img') !== null) {
+                    fldDemo.children[0].style.width = pDim * 3;
+                    fldDemo.style.left = pLeft;
+                } else {
+                    fldDemo.style.left = pLeft;
+                }
+
             }
+
         }
 
         //Legge i valori e visualizza i simboli
